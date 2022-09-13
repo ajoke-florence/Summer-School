@@ -66,3 +66,4 @@ filter(flipper_length_mm > mean(flipper_length_mm, na.rm =T))
 
 penguins %>%
 filter(body_mass_g > mean(body_mass_g, na.rm =T))
+
