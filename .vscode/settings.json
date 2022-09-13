@@ -1,0 +1,23 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "python.formatting.provider": "black",
+    "python.languageServer": "Pylance",
+    "python.linting.mypyEnabled": true,
+    "r.plot.useHttpgd": true,
+    "python.defaultInterpreterPath": "~/conda/bin/python",
+    "python.terminal.activateEnvironment": false,
+    "files.insertFinalNewline": true,
+    "python.linting.mypyArgs": [
+        "--follow-imports=silent",
+        "--ignore-missing-imports",
+        "--show-column-numbers",
+        "--no-pretty",
+        "--no_implicit_optional=True",
+    ],
+    "files.exclude": {
+        ".solutions/": true
+    },
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportUnusedExpression": "none",
+    }
+}
