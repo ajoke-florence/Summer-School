@@ -174,9 +174,99 @@ penguins %>%
   geom_point(colour = "red")
 
 penguins %>%
+drop_na()%>%
   ggplot(aes(
     x = species,
     y = flipper_length_mm,
     fill = sex
   )) +
   geom_boxplot()
+
+penguins %>%
+  drop_na(sex) %>%
+  ggplot(
+    aes(x = bill_length_mm)
+  ) +
+  geom_histogram() +
+  facet_wrap(
+    facets = "sex",
+    ncol = 1
+  )
+
+penguins %>%
+  drop_na(sex) %>%
+  ggplot(
+    aes(x = bill_depth_mm)
+  ) +
+  geom_histogram() +
+  facet_wrap(
+    facets = "sex",
+    ncol = 1
+  )
+
+penguins %>%
+drop_na()
+  ggplot(
+    aes(
+      x = flipper_length_mm,
+      fill = species
+    )
+  ) +
+  geom_histogram()
+
+
+library(dplyr)
+skim(storms)
+
+storms %>%
+  ggplot(
+    aes(
+      x = wind,
+    )
+  ) +
+  geom_histogram()
+
+
+storms %>%
+  ggplot(
+    aes(
+      x = long,
+      y = lat,
+      color=pressure
+    )
+  ) +
+  geom_point()
+
+
+storms %>%
+  group_by(name) %>%
+  summarise(n = n())
+
+storms %>%
+  count(name) %>%
+  filter(name == "Amy")
+
+
+storms %>%
+  ggplot(
+    aes(
+      x = year,
+      y = wind,
+    )
+  ) +
+  geom_point(alpha = 0.1) +
+  geom_smooth()
+
+storms %>%
+  group_by(year) %>%
+  summarise(
+    wind_median = median(wind)
+  ) %>%
+  ggplot(
+    aes(
+      x = year,
+      y = wind_median
+    )
+  ) +
+  geom_line()
+
