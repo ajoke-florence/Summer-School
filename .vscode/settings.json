@@ -15,7 +15,7 @@
         "--no_implicit_optional=True",
     ],
     "files.exclude": {
-        ".solutions/": true
+        ".solutions/": false
     },
     "python.analysis.diagnosticSeverityOverrides": {
         "reportUnusedExpression": "none",
